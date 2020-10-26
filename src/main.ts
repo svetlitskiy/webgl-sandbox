@@ -38,7 +38,7 @@ gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexData), gl.DYNAMIC_DRAW);
 
 const colorBuffer = gl.createBuffer();
 gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
-gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexData), gl.DYNAMIC_DRAW);
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorData), gl.DYNAMIC_DRAW);
 
 const vertexShader = gl.createShader(gl.VERTEX_SHADER);
 gl.shaderSource(vertexShader, `
@@ -57,11 +57,12 @@ gl.compileShader(vertexShader);
 
 const fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
 gl.shaderSource(fragmentShader, `
+precision mediump float;
 varying vec3 vColor;
-
 void main() {
-    gl_FragColor = vec4(vColor, 0, 0, 1);
-}`);
+    gl_FragColor = vec4(vColor, 1);
+}
+`);
 gl.compileShader(fragmentShader);
 
 const program = gl.createProgram();
