@@ -41,8 +41,9 @@ gl.compileShader(vertexShader);
 
 const fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
 gl.shaderSource(fragmentShader, `
+void main() {
     gl_FragColor = vec4(1, 0, 0, 1);
-`);
+}`);
 gl.compileShader(fragmentShader);
 
 const program = gl.createProgram();

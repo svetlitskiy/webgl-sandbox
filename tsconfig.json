@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "declaration": true,
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es2017",
+        "sourceMap": true,
+        "outDir": "./src",
+        "baseUrl": "./src",
+        "paths": {
+            "@app/*": ["./src/*"]
+        },
+        "noUnusedLocals": true,
+        "newLine": "LF"
+    },
+    "exclude": ["./node_modules", "./dist"]
+}
